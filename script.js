@@ -8,6 +8,7 @@ console.log(score)
 let result = 0
 let hitpostion 
 let currentTime = 10;
+let timerId
 
 function randomSquare(){
     squares.forEach(squares => {
@@ -30,7 +31,7 @@ squares.forEach(squares=>{
 })
 
 function moveMOle(){
-   let timerId = null
+
    timerId = setInterval(randomSquare, 1200)
 }
 moveMOle()
@@ -42,6 +43,7 @@ function countDown(){
     if(currentTime == 0){
         clearInterval(countDownTimerId)
         alert('the game is OVER!  your Score is: ' + result)
+        clearInterval(timerId)
     }
 }
 
